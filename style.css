@@ -3,6 +3,39 @@
     src: url(./Assets/Gilroy-Regular.ttf);
 }
 
+
+.side-bar > .name {
+    animation: name-entrance 1.5s ease-out both,
+               name-glow 3s ease-in-out 1.2s infinite alternate;
+}
+
+@keyframes name-entrance {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes name-glow {
+    from {
+        text-shadow: 0 0 3px rgba(168, 85, 247, 0.2);
+    }
+
+    to {
+        text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
 body {
     margin: 0px auto;
     height: 100vh;
@@ -36,7 +69,8 @@ body {
     /* border: 1px solid white; */
     grid-area: scrolling-bar; 
     margin-top: 0px;
-    padding-top: 0px;                      
+    padding-top: 0px;    
+    scroll-behavior: smooth;                  
 }   
 
 body::-webkit-scrollbar {
@@ -108,7 +142,7 @@ body::-webkit-scrollbar-thumb:hover {
     height: 2px;
     background-color: #64748B;
 
-    transition: width 0.3s ease, background-color 0.3s ease;
+    transition: width 0.4s ease, background-color 0.4s ease;
 }
 
 .nav-link:hover,
